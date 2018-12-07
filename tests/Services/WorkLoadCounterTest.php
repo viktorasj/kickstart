@@ -6,7 +6,7 @@
  * Time: 22.08
  */
 
-namespace App\Tests;
+namespace App\Services\Tests;
 
 use App\Services\TeamsInterface;
 use PHPUnit\Framework\MockObject\MockObject;
