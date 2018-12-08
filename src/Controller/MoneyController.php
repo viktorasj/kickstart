@@ -22,10 +22,8 @@ class MoneyController extends Controller
     public function index(MoneyFormatter $moneyFormatter, $number)
     {
 
-        $moneyFormatter->formatEur($number);
-        $this->Eur = $moneyFormatter->getNumberToMoney();
-        $moneyFormatter->formatUsd($number);
-        $this->Usd = $moneyFormatter->getNumberToMoney();
+        $this->Eur = $moneyFormatter->formatEur($number);
+        $this->Usd = $moneyFormatter->formatUsd($number);
 
 
         return $this->render('home/money.html.twig', [

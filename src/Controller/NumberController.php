@@ -20,8 +20,8 @@ class NumberController extends Controller
     public function index(NumberFormatter $numberFormatter, $number)
     {
 
-        $numberFormatter->formatNumber($number);
-        $this->formatedNumber = $numberFormatter->getFormatedNumber();
+        $this->formatedNumber = $numberFormatter->formatNumber($number);
+
 
         return $this->render('home/numbers.html.twig', [
             'formatedNumber' => $this->formatedNumber

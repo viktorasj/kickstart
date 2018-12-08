@@ -11,12 +11,11 @@ namespace App\Services;
 
 interface NumberFormaterInterface
 {
-    public function formatNumber (float $number): void;
-    public function formatToMillions (float $number): void;
-    public function formatToThousands (float $number): void;
-    public function formatToIntegerWithGap (float $number): void;
-    public function formatToDec (float $number): void;
-    public function setFormatedNumber (string $number): void;
-    public function getFormatedNumber (): string;
+    public function formatNumber (float $number): ?string;
+    public function formatToMillions (float $number): string;
+    public function formatToThousands (float $number): string;
+    public function formatToIntegerWithGap (float $number): string;
+    public function formatToDec (float $number): string;
+
 }
 

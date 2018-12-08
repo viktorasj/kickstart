@@ -30,7 +30,6 @@ class NumberFormatterTest extends TestCase
     public function testFormatsFromProvidedData($expected, $numberToCheck)
     {
         $numberFormatter = new NumberFormatter();
-        $numberFormatter->formatNumber($numberToCheck);
-        $this->assertEquals($expected, $numberFormatter->getFormatedNumber());
+        $this->assertEquals($expected, $numberFormatter->formatNumber($numberToCheck));
     }
 }

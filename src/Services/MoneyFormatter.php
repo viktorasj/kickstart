@@ -12,11 +12,9 @@ namespace App\Services;
 class MoneyFormatter
 {
     /**
-     * @var        NumberFormatter
-     * @var string numberToMoney
+     * @var NumberFormatter $numberFormatter
      */
     private $numberFormatter;
-    private $numberToMoney;
 
     /**
      * MoneyFormatter constructor.
@@ -29,35 +27,19 @@ class MoneyFormatter
 
     /**
      * @param float $number
+     * @return string
      */
-    public function formatEur(float $number): void
+    public function formatEur(float $number): string
     {
-        $this->numberFormatter->formatNumber($number);
-        $this->numberToMoney = $this->numberFormatter->getFormatedNumber().' €';
+        return $this->numberFormatter->formatNumber($number).' €';
     }
 
     /**
      * @param float $number
-     */
-    public function formatUsd(float $number): void
-    {
-        $this->numberFormatter->formatNumber($number);
-        $this->numberToMoney = '$ '.$this->numberFormatter->getFormatedNumber();
-    }
-
-    /**
-     * @param string $ntm
-     */
-    public function setNumberToMoney(string $ntm): void
-    {
-        $this->numberToMoney = $ntm;
-    }
-
-    /**
      * @return string
      */
-    public function getNumberToMoney(): string
+    public function formatUsd(float $number): string
     {
-        return $this->numberToMoney;
+        return '$ '.$this->numberFormatter->formatNumber($number);
     }
 }
