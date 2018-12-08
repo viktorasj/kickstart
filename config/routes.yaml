@@ -1,5 +1,5 @@
-#index:
-#  path: /number/{number}
-#  controller: App\Controller\NumberController::index
-#  defaults: { number: null }
+index:
+  path: /
+  controller: App\Controller\HomeController::index
+
 

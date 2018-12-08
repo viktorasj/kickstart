@@ -9,18 +9,20 @@
         body {
             margin: 0;
             padding: 0;
-            font-weight: 100;
-            font-family: 'Lato';
-        }
-
-        .title {
-            margin: 20px auto;
-            text-align: center;
-            font-size: 96px;
+            color: black;
+            /*font-weight: 100;*/
+            /*font-family: 'Lato';*/
         }
     </style>
 {% endblock %}
 
 {% block body %}
-    Pasinkite dalyvį pvz. <a href="{{ path('member', {member: "Vardenis Pavardenis"}) }}">Vardenis Pavardenis</a>
+    <div class="row mt-5">
+        <div class="col-sm-6 text-center">
+            <a href="./number/123456789">Check numbers</a>
+        </div>
+        <div class="col-sm-6 text-center">
+            <a href="./money/123456789">Check currency signs</a>
+        </div>
+    </div>
 {% endblock %}
