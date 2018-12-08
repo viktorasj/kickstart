@@ -30,6 +30,7 @@ class NumberFormatter implements NumberFormaterInterface
         }elseif ($number >= 0 && $number < 1000 || $number < 0 && $number > -1000){
             $this->formatToDec($number);
         }
+
     }
 
     /**

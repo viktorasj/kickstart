@@ -19,3 +19,4 @@ interface NumberFormaterInterface
     public function setFormatedNumber (string $number): void;
     public function getFormatedNumber (): string;
 }
+

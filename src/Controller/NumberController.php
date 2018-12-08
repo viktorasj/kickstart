@@ -4,12 +4,19 @@ namespace App\Controller;
 
 use App\Services\NumberFormatter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Routing\Annotation\Route;
 
 class NumberController extends Controller
 {
 
     private $formatedNumber;
 
+    /**
+     * @Route("/number/{number}", name="numbers")
+     * @param NumberFormatter $numberFormatter
+     * @param $number
+     * @return mixed
+     */
     public function index(NumberFormatter $numberFormatter, $number)
     {
 
