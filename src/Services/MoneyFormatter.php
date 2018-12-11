@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: vic
- * Date: 18.12.8
- * Time: 02.00
- */
 
 namespace App\Services;
 
@@ -12,15 +6,15 @@ namespace App\Services;
 class MoneyFormatter
 {
     /**
-     * @var NumberFormatter $numberFormatter
+     * @var NumberFormatterInterface
      */
     private $numberFormatter;
 
     /**
      * MoneyFormatter constructor.
-     * @param NumberFormatter $numberFormatter
+     * @param NumberFormatterInterface $numberFormatter
      */
-    public function __construct(NumberFormatter $numberFormatter)
+    public function __construct(NumberFormatterInterface $numberFormatter)
     {
         $this->numberFormatter = $numberFormatter;
     }

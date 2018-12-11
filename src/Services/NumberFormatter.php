@@ -1,15 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: vic
- * Date: 18.12.7
- * Time: 23.17
- */
 
 namespace App\Services;
 
 
-class NumberFormatter implements NumberFormaterInterface
+class NumberFormatter implements NumberFormatterInterface
 {
     /**
      * @param float $number
@@ -39,7 +33,7 @@ class NumberFormatter implements NumberFormaterInterface
      * @param float $number
      * @return string
      */
-    public function formatToMillions (float $number): string
+    private function formatToMillions (float $number): string
     {
         return strval(number_format(($number/1000000), 2)).'M';
     }
@@ -48,7 +42,7 @@ class NumberFormatter implements NumberFormaterInterface
      * @param float $number
      * @return string
      */
-    public function formatToThousands(float $number): string
+    private function formatToThousands(float $number): string
     {
         return strval(number_format(($number/1000), 0)).'K';
     }
@@ -57,7 +51,7 @@ class NumberFormatter implements NumberFormaterInterface
      * @param float $number
      * @return string
      */
-    public function formatToIntegerWithGap(float $number): string
+    private function formatToIntegerWithGap(float $number): string
     {
         return  strval(number_format(($number), 0, '.', ' '));
     }
@@ -66,7 +60,7 @@ class NumberFormatter implements NumberFormaterInterface
      * @param float $number
      * @return string
      */
-    public function formatToDec(float $number): string
+    private function formatToDec(float $number): string
     {
         return str_replace('.00', '', number_format(($number), 2, '.', ' '));
     }

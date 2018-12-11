@@ -7,7 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class NumberFormatterTest extends TestCase
 {
-
+    /**
+     * @return array
+     */
     public function providedData()
     {
         return [

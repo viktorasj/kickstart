@@ -3,9 +3,9 @@
 namespace App\Tests;
 
 use App\Services\MoneyFormatter;
-use App\Services\NumberFormatter;
+use App\Services\NumberFormatterInterface;
 use PHPUnit\Framework\TestCase;
-use PHPUnit\Framework\MockObject\MockObject;
+
 
 
 class MoneyFormatterTest extends TestCase
@@ -41,24 +41,22 @@ class MoneyFormatterTest extends TestCase
      */
     public function testUsd($expected, $formatedNumber, $numberToCheck)
     {
-        $numberFormatter = $this->createMock(NumberFormatter::class);
+        $numberFormatter = $this->createMock(NumberFormatterInterface::class);
         $numberFormatter->method('formatNumber')->willReturn($formatedNumber);
         $moneyFormatter = new MoneyFormatter($numberFormatter);
         $this->assertEquals($expected, $moneyFormatter->formatUsd($numberToCheck));
     }
 
 
-
-
     /**
      * @dataProvider providedDataEur
-     * @param string $expected
-     * @param string $formatedNumber
-     * @param float  $numberToCheck
+     * @param $expected
+     * @param $formatedNumber
+     * @param $numberToCheck
      */
     public function testEur($expected, $formatedNumber, $numberToCheck)
     {
-        $numberFormatter = $this->createMock(NumberFormatter::class);
+        $numberFormatter = $this->createMock(NumberFormatterInterface::class);
         $numberFormatter->method('formatNumber')->willReturn($formatedNumber);
         $moneyFormatter = new MoneyFormatter($numberFormatter);
         $this->assertEquals($expected, $moneyFormatter->formatEur($numberToCheck));
